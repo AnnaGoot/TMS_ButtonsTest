@@ -13,6 +13,7 @@ public abstract class Button : MonoBehaviour, IPointerDownHandler , IPointerUpHa
     private Vector2 startScale;
 
     public float animationModificator = 1.2f;
+    internal bool interactable;
 
     void OnEnable()
     {
