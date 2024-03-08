@@ -16,6 +16,18 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 InputDirection;
 
+    public GameObject weapon;
+
+
+    public Sword swordMovement;
+
+
+    void Start()
+    {
+  
+    }
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -29,7 +41,17 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat(MoveForwardHash, InputDirection.y);
         animator.SetFloat(StrafeValueHash, InputDirection.x);
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            animator.SetTrigger("Attack");
+        }
+
+
+
     }
+
+
 
     void Move(float x, float y)
     {
