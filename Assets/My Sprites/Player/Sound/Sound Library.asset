@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3d3f283a2772d48af3fdbc82bc4ac3, type: 3}
+  m_Name: Sound Library
+  m_EditorClassIdentifier: 
+  footstepsAudioArr:
+  - {fileID: 8300000, guid: daada3abd7bbb194fb1780bda931eaa2, type: 3}
+  - {fileID: 8300000, guid: d42bf28e5b884be46a2cfa42fc767ded, type: 3}

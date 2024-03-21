@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEditor;
 
 public class CoinsAvaliable : MonoBehaviour
 {
@@ -20,10 +16,20 @@ public class CoinsAvaliable : MonoBehaviour
         text.text = $"{coins}";
     }
 
-    public void BuyItem(int price)
+    public bool BuyItem(int _price)
     {
-        if (coins > price)
-            coins -= price;
+        if (coins >= _price)
+        {
+            coins -= _price;
+            SetScore();
+            return true;
+        }
+        else
+        {
+            return false;
+        
+        }
+
     }
 
 }
