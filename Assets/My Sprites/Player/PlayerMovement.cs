@@ -57,20 +57,26 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+
+        if (InputDirection.y != 0)
         {
-            if (!audioSource.isPlaying)
+            if (Input.GetKey(KeyCode.LeftShift))
             {
-                PlayRunningSound();
+                if (!audioSource.isPlaying)
+                {
+                    PlayRunningSound();
+                }
+            }
+            else
+            {
+                if (audioSource.isPlaying)
+                {
+                    StopRunningSound();
+                }
             }
         }
-        else
-        {
-            if (audioSource.isPlaying)
-            {
-                StopRunningSound();
-            }
-        }
+
+
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -89,8 +95,9 @@ public class PlayerMovement : MonoBehaviour
         AudioClip footstepsSound = soundLibrary.GetSound(0);
         if (footstepsSound != null)
         {
-            audioSource.clip = footstepsSound;
-            audioSource.Play();
+                audioSource.clip = footstepsSound;
+                audioSource.Play();
+
         }
     }
 
