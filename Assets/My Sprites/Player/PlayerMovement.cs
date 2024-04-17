@@ -8,26 +8,23 @@ public class PlayerMovement : MonoBehaviour
     private const string MoveForwardHash = "MoveValue";
     private const string StrafeValueHash = "StrafeValue";
 
-    private const string attackAnimation = "Attack";
+    //private const string attackAnimation = "Attack";
 
-    private AudioSource audioSource;
-    [SerializeField] private SoundLibrary soundLibrary;
     private Animator animator;
+    private FloatingJoystick joystick;
 
-    public float smoothBlend = 0.1f;
+    //public float smoothBlend = 0.1f;
 
     private Vector2 InputDirection;
 
-    public GameObject weapon;
-    public Sword swordMovement;
-
-    private bool isMoving = false;
+    //public GameObject weapon;
+    //public Sword swordMovement;
 
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        //joystick = GetComponent<FloatingJoystick>();
     }
 
     private void Update()
@@ -39,86 +36,25 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat(MoveForwardHash, InputDirection.y);
         animator.SetFloat(StrafeValueHash, InputDirection.x);
 
-        if (InputDirection.magnitude > 0)
-        {
-            if (!isMoving)
-            {
-                isMoving = true;
-                PlayFootstepsSound();
-            }
-        }
-        else
-        {
-            if (isMoving)
-            {
-                isMoving = false;
-                StopFootstepsSound();
-            }
-            
-        }
+        //float horizontalInput = joystick.Horizontal;
+        //float verticalInput = joystick.Vertical;
 
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //verticalInput += 1;
 
-        if (InputDirection.y != 0)
-        {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                if (!audioSource.isPlaying)
-                {
-                    PlayRunningSound();
-                }
-            }
-            else
-            {
-                if (audioSource.isPlaying)
-                {
-                    StopRunningSound();
-                }
-            }
-        }
+        //animator.SetFloat(MoveForwardHash, verticalInput);
+        //animator.SetFloat(StrafeValueHash, horizontalInput);
 
-
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            animator.SetTrigger(attackAnimation);
-        }
+        //if (Input.GetKeyDown(KeyCode.Mouse0))
+        //{
+        //    animator.SetTrigger(attackAnimation);
+        //}
     }
 
 
-    void Move(float x, float y)
-    {
-        animator.SetFloat("Blend", y, smoothBlend, Time.deltaTime);
-    }
+    //void Move(float x, float y)
+    //{
+    //    animator.SetFloat("Blend", y, smoothBlend, Time.deltaTime);
+    //}
 
-    void PlayFootstepsSound()
-    {
-        AudioClip footstepsSound = soundLibrary.GetSound(0);
-        if (footstepsSound != null)
-        {
-                audioSource.clip = footstepsSound;
-                audioSource.Play();
-
-        }
-    }
-
-    void StopFootstepsSound()
-    {
-        audioSource.Stop();
-    }
-
-
-    void PlayRunningSound()
-    {
-        AudioClip runningSound = soundLibrary.GetSound(1);
-        if (runningSound != null)
-        {
-            audioSource.clip = runningSound;
-            audioSource.Play();
-        }
-    }
-
-    void StopRunningSound()
-    {
-        audioSource.Stop();
-    }
 }

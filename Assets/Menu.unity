@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 1196317631}
-  _shop: {fileID: 0}
+  _shop: {fileID: 1533193046}
 --- !u!1 &1170779797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,6 +3463,18 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 5278730373681755615}
+    - target: {fileID: 5808227831431907601, guid: c9469f09270be0d488c8e46ffb53d6d4, type: 3}
+      propertyPath: bgColor.b
+      value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808227831431907601, guid: c9469f09270be0d488c8e46ffb53d6d4, type: 3}
+      propertyPath: bgColor.g
+      value: 0.38823533
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808227831431907601, guid: c9469f09270be0d488c8e46ffb53d6d4, type: 3}
+      propertyPath: bgColor.r
+      value: 0.5411765
+      objectReference: {fileID: 0}
     - target: {fileID: 5808227831431907601, guid: c9469f09270be0d488c8e46ffb53d6d4, type: 3}
       propertyPath: itemImage
       value: 

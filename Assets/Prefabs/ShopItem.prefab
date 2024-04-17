@@ -929,6 +929,7 @@ MonoBehaviour:
   _name: 
   _price: 0
   index: 0
+  bgColor: {r: 0.3019608, g: 0.21176472, b: 0.7294118, a: 0}
 --- !u!1 &5278730375329480907
 GameObject:
   m_ObjectHideFlags: 0
